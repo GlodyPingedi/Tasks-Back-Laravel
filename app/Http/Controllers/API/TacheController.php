@@ -58,6 +58,8 @@ class TacheController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tache = Tache::find($id);
+        $tache->delete();
+        return response()->json(['message' => 'Tâche supprimée avec succès']);
     }
 }
